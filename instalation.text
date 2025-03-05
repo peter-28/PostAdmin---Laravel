@@ -1,0 +1,13 @@
+git clone https://github.com/FahimAnzamDip/triangle-pos.git
+composer install 
+npm install
+npm run dev
+copy .env.example to .env
+php artisan key:generate
+set up your database in the .env
+php artisan migrate --seed
+php artisan storage:link
+php artisan serve
+then visit http://localhost:8000 or http://127.0.0.1:8000.
+
+BY : Pieter

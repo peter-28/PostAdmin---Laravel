@@ -7,9 +7,7 @@
     rel="stylesheet">
 <!-- Bootstrap Icons -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-<link rel="stylesheet" href="sweetalert2.min.css">
-@yield('third_party_stylesheets')
-
+<link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
 @stack('page_css')
 
 {{-- @livewireStyles --}}

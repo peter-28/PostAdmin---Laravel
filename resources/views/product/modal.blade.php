@@ -8,31 +8,31 @@
                     <i class="bi bi-x"></i>
                 </button>
             </div>
-
-            <div class="modal-body">
-                <label>Status : </label>
-                <div class="form-group">
-                    <select id="status" name="status" class="form-control">
-                        <option value="">Silahkan Pilih Kondisi Bahan Bakar</option>
-                        <option value="PENUH">Penuh</option>
-                        <option value="SETENGAH">Setengah</option>
-                        <option value="HABIS">Habis</option>
-                    </select>
+            <form action="{{ route('product.store') }}" method="post">
+                @csrf
+                <div class="modal-body">
+                    <label>Nama : </label>
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" class="form-control">
+                    </div>
+                    <label>Qty : </label>
+                    <div class="form-group">
+                        <input type="number" id="qty" name="qty" class="form-control">
+                    </div>
+                    <label>Price : </label>
+                    <div class="form-group">
+                        <input type="number" id="price" name="price" class="form-control">
+                    </div>
+                    <label>Description : </label>
+                    <div class="form-group">
+                        <input type="text" id="description" name="description" class="form-control">
+                    </div>
                 </div>
-                <label>Deskripsi : </label>
-                <div class="form-group">
-                    <select id="deskripsi" name="deskripsi" class="form-control">
-                        <option value="">Silahkan Pilih Presentase Bahan Bakar</option>
-                        <option value="Indikator Lebih Dari 75%">Indikator Lebih Dari 75%</option>
-                        <option value="Indikator Diantara 50% - 75%">Indikator Diantara 50% - 75%</option>
-                        <option value="Indikator Kurang Dari 50%">Indikator Kurang Dari 50%</option>
-                    </select>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary mr-1"><i class="bx bx-save mt"></i> Submit
+                    </button>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="submit" class="btn btn-primary mr-1"><i class="bx bx-save mt"></i> Submit
-                </button>
-            </div>
+            </form>
         </div>
     </div>
 </div>

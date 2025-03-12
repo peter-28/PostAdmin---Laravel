@@ -6,10 +6,10 @@
     <title>Post || Temp </title>
     <meta content="Fahim Anzam Dip" name="author">
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('images/favicon.png') }}">
     @include('includes.main-css')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
 <body class="c-app">

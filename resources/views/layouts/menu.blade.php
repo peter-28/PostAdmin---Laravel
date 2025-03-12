@@ -3,6 +3,11 @@
         <i class="c-sidebar-nav-icon bi bi-house" style="line-height: 1;"></i> Home
     </a>
 </li>
+<li class="c-sidebar-nav-item">
+    <a class="c-sidebar-nav-link {{ request()->routeIs('/product') ? 'c-active' : '' }}" href="/product">
+        <i class="c-sidebar-nav-icon bi bi-house" style="line-height: 1;"></i> Product
+    </a>
+</li>
 
 {{-- @can('access_products') --}}
 <li class="c-sidebar-nav-item c-sidebar-nav-dropdown">
@@ -48,15 +53,13 @@
     <ul class="c-sidebar-nav-dropdown-items">
         @can('create_adjustments')
             <li class="c-sidebar-nav-item">
-                <a class="c-sidebar-nav-link {{ request()->routeIs('adjustments.create') ? 'c-active' : '' }}"
-                    href="#">
+                <a class="c-sidebar-nav-link {{ request()->routeIs('adjustments.create') ? 'c-active' : '' }}" href="#">
                     <i class="c-sidebar-nav-icon bi bi-journal-plus" style="line-height: 1;"></i> Create Adjustment
                 </a>
             </li>
         @endcan
         <li class="c-sidebar-nav-item">
-            <a class="c-sidebar-nav-link {{ request()->routeIs('adjustments.index') ? 'c-active' : '' }}"
-                href="#">
+            <a class="c-sidebar-nav-link {{ request()->routeIs('adjustments.index') ? 'c-active' : '' }}" href="#">
                 <i class="c-sidebar-nav-icon bi bi-journals" style="line-height: 1;"></i> All Adjustments
             </a>
         </li>
@@ -72,8 +75,7 @@
     <ul class="c-sidebar-nav-dropdown-items">
         @can('create_adjustments')
             <li class="c-sidebar-nav-item">
-                <a class="c-sidebar-nav-link {{ request()->routeIs('quotations.create') ? 'c-active' : '' }}"
-                    href="#">
+                <a class="c-sidebar-nav-link {{ request()->routeIs('quotations.create') ? 'c-active' : '' }}" href="#">
                     <i class="c-sidebar-nav-icon bi bi-journal-plus" style="line-height: 1;"></i> Create Quotation
                 </a>
             </li>
@@ -96,8 +98,7 @@
     @can('create_purchase')
         <ul class="c-sidebar-nav-dropdown-items">
             <li class="c-sidebar-nav-item">
-                <a class="c-sidebar-nav-link {{ request()->routeIs('purchases.create') ? 'c-active' : '' }}"
-                    href="#">
+                <a class="c-sidebar-nav-link {{ request()->routeIs('purchases.create') ? 'c-active' : '' }}" href="#">
                     <i class="c-sidebar-nav-icon bi bi-journal-plus" style="line-height: 1;"></i> Create Purchase
                 </a>
             </li>
@@ -131,8 +132,7 @@
     @endcan
     <ul class="c-sidebar-nav-dropdown-items">
         <li class="c-sidebar-nav-item">
-            <a class="c-sidebar-nav-link {{ request()->routeIs('purchase-returns.index') ? 'c-active' : '' }}"
-                href="#">
+            <a class="c-sidebar-nav-link {{ request()->routeIs('purchase-returns.index') ? 'c-active' : '' }}" href="#">
                 <i class="c-sidebar-nav-icon bi bi-journals" style="line-height: 1;"></i> All Purchase Returns
             </a>
         </li>
@@ -174,8 +174,7 @@
     @can('create_sale_returns')
         <ul class="c-sidebar-nav-dropdown-items">
             <li class="c-sidebar-nav-item">
-                <a class="c-sidebar-nav-link {{ request()->routeIs('sale-returns.create') ? 'c-active' : '' }}"
-                    href="#">
+                <a class="c-sidebar-nav-link {{ request()->routeIs('sale-returns.create') ? 'c-active' : '' }}" href="#">
                     <i class="c-sidebar-nav-icon bi bi-journal-plus" style="line-height: 1;"></i> Create Sale Return
                 </a>
             </li>
@@ -183,8 +182,7 @@
     @endcan
     <ul class="c-sidebar-nav-dropdown-items">
         <li class="c-sidebar-nav-item">
-            <a class="c-sidebar-nav-link {{ request()->routeIs('sale-returns.index') ? 'c-active' : '' }}"
-                href="#">
+            <a class="c-sidebar-nav-link {{ request()->routeIs('sale-returns.index') ? 'c-active' : '' }}" href="#">
                 <i class="c-sidebar-nav-icon bi bi-journals" style="line-height: 1;"></i> All Sale Returns
             </a>
         </li>
@@ -201,23 +199,20 @@
     <ul class="c-sidebar-nav-dropdown-items">
         @can('access_expense_categories')
             <li class="c-sidebar-nav-item">
-                <a class="c-sidebar-nav-link {{ request()->routeIs('expense-categories.*') ? 'c-active' : '' }}"
-                    href="#">
+                <a class="c-sidebar-nav-link {{ request()->routeIs('expense-categories.*') ? 'c-active' : '' }}" href="#">
                     <i class="c-sidebar-nav-icon bi bi-collection" style="line-height: 1;"></i> Categories
                 </a>
             </li>
         @endcan
         @can('create_expenses')
             <li class="c-sidebar-nav-item">
-                <a class="c-sidebar-nav-link {{ request()->routeIs('expenses.create') ? 'c-active' : '' }}"
-                    href="#">
+                <a class="c-sidebar-nav-link {{ request()->routeIs('expenses.create') ? 'c-active' : '' }}" href="#">
                     <i class="c-sidebar-nav-icon bi bi-journal-plus" style="line-height: 1;"></i> Create Expense
                 </a>
             </li>
         @endcan
         <li class="c-sidebar-nav-item">
-            <a class="c-sidebar-nav-link {{ request()->routeIs('expenses.index') ? 'c-active' : '' }}"
-                href="#">
+            <a class="c-sidebar-nav-link {{ request()->routeIs('expenses.index') ? 'c-active' : '' }}" href="#">
                 <i class="c-sidebar-nav-icon bi bi-journals" style="line-height: 1;"></i> All Expenses
             </a>
         </li>
@@ -263,20 +258,17 @@
             </a>
         </li>
         <li class="c-sidebar-nav-item">
-            <a class="c-sidebar-nav-link {{ request()->routeIs('payments-report.index') ? 'c-active' : '' }}"
-                href="#">
+            <a class="c-sidebar-nav-link {{ request()->routeIs('payments-report.index') ? 'c-active' : '' }}" href="#">
                 <i class="c-sidebar-nav-icon bi bi-clipboard-data" style="line-height: 1;"></i> Payments Report
             </a>
         </li>
         <li class="c-sidebar-nav-item">
-            <a class="c-sidebar-nav-link {{ request()->routeIs('sales-report.index') ? 'c-active' : '' }}"
-                href="#">
+            <a class="c-sidebar-nav-link {{ request()->routeIs('sales-report.index') ? 'c-active' : '' }}" href="#">
                 <i class="c-sidebar-nav-icon bi bi-clipboard-data" style="line-height: 1;"></i> Sales Report
             </a>
         </li>
         <li class="c-sidebar-nav-item">
-            <a class="c-sidebar-nav-link {{ request()->routeIs('purchases-report.index') ? 'c-active' : '' }}"
-                href="#">
+            <a class="c-sidebar-nav-link {{ request()->routeIs('purchases-report.index') ? 'c-active' : '' }}" href="#">
                 <i class="c-sidebar-nav-icon bi bi-clipboard-data" style="line-height: 1;"></i> Purchases Report
             </a>
         </li>

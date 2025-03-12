@@ -6,6 +6,10 @@ Route::get('/', function () {
     return view('dashboard.index');
 });
 
+Route::get('/product', function () {
+    return view('product.index');
+});
+
 Route::get('/profile', function () {
     return view('profile.index');
 })->name('profile');

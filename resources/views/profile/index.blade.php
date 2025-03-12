@@ -8,7 +8,7 @@
 
 @section('breadcrumb')
     <ol class="breadcrumb border-0 m-0">
-        <li class="breadcrumb-item"><a href="{{ url('/') }}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{{ url('/') }}">Dashboard</a></li>
         <li class="breadcrumb-item active">Profile</li>
     </ol>
 @endsection

@@ -9,6 +9,7 @@ import * as bootstrap from "bootstrap";
 
 try {
     window.Popper = Popper;
+    window.bootstrap = bootstrap;
 } catch (e) {
     console.log(e);
 }

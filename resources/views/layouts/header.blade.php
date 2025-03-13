@@ -12,11 +12,11 @@
 
 </ul>
 <ul class="c-header-nav ml-auto mr-4">
-    <li class="c-header-nav-item mr-3">
+    {{-- <li class="c-header-nav-item mr-3">
         <a class="btn btn-primary btn-pill text-white">
             <i class="bi bi-cart mr-1"></i> POS System
         </a>
-    </li>
+    </li> --}}
     <li class="c-header-nav-item dropdown d-md-down-none mr-2">
         <a class="c-header-nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
             aria-expanded="false">
@@ -42,13 +42,13 @@
             </div>
             <div class="d-flex flex-column">
                 <span class="font-weight-bold">Peter</span>
-                <span class="font-italic">Online <i class="bi bi-circle-fill text-success"
+                <span class="font-italic text-muted">Active <i class="bi bi-circle-fill text-success"
                         style="font-size: 11px;"></i></span>
             </div>
         </a>
         <div class="dropdown-menu dropdown-menu-right pt-0">
             <div class="dropdown-header bg-light py-2"><strong>Account</strong></div>
-            <a class="dropdown-item" href="{{ route('profile') }}">
+            <a class="dropdown-item" href="{{ route('admin.profile') }}">
                 <i class="mfe-2  bi bi-person" style="font-size: 1.2rem;"></i> Profile
             </a>
             <a class="dropdown-item" href="#"

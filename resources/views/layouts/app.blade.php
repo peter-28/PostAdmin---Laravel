@@ -25,7 +25,9 @@
 
         <div class="c-body">
             <main class="c-main">
-                @yield('content')
+                <div class="container">
+                    @yield('content')
+                </div>
             </main>
         </div>
 

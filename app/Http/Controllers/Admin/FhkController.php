@@ -13,10 +13,8 @@ class FhkController extends Controller
      */
     public function index()
     {
-        $fhk = Fhk::all();
-        return view('admin.fhk.index', [
-            'fhk' => $fhk,
-        ]);
+        $fhk = Fhk::paginate(5);
+        return view('admin.fhk.index', ['fhk' => $fhk,]);
     }
 
     /**

@@ -16,7 +16,7 @@
     </a>
 </li>
 <li class="c-sidebar-nav-item">
-    <a class="c-sidebar-nav-link {{ request()->routeIs('/product') ? 'c-active' : '' }}" href="/product">
+    <a class="c-sidebar-nav-link {{ request()->routeIs('gembala.*') ? 'c-active' : '' }}" href="{{ route('gembala.index') }}">
         <i class="c-sidebar-nav-icon bi bi-people" style="line-height: 1;"></i> Data Gembala
     </a>
 </li>

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\PendampingFhkController;
 use App\Http\Controllers\Admin\FhkController;
+use App\Http\Controllers\Admin\GembalaController;
 use Illuminate\Support\Facades\Storage;
 
 Route::get('/', function () {
@@ -16,6 +17,7 @@ Route::prefix('/admin')->group(function () {
 
     Route::resource('/fhk', FhkController::class);
     Route::resource('/pendamping-fhk', PendampingFhkController::class);
+    Route::resource('/gembala', GembalaController::class);
 
     Route::get('/profile', function () {
         return view('admin.profile.index');

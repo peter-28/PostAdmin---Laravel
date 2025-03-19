@@ -47,10 +47,10 @@ class FhkController extends Controller
         if ($request->hasFile('file')) {
             $file = $request->file('file');
             $fileName = time() . '_' . $file->getClientOriginalName();
-            $destinationPath = public_path('fhk');
+             $destinationPath = 'fhk';
 
             try {
-                $file->move($destinationPath, $fileName);
+                 $path = $file->storeAs($destinationPath, $fileName, 'public');
                 $fhk->file = 'fhk/' . $fileName;
             } catch (\Exception $e) {
                 return back()->with('error', 'Gagal menyimpan file: ' . $e->getMessage());

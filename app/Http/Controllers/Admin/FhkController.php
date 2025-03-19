@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Admin\Fhk;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class FhkController extends Controller
 {
@@ -14,7 +15,7 @@ class FhkController extends Controller
     public function index()
     {
         $fhk = Fhk::paginate(5);
-        return view('admin.fhk.index', ['fhk' => $fhk,]);
+        return view('admin.fhk.index', ['fhk' => $fhk]);
     }
 
     /**
@@ -30,7 +31,34 @@ class FhkController extends Controller
      */
     public function store(Request $request)
     {
-        Fhk::create($request->all());
+        $request->validate([
+            'judul' => 'required|string|max:255',
+            'tema' => 'required|string|max:255',
+            'bacaan_alkitab' => 'required|string|max:255',
+            'tanggal_khotbah' => 'required|date',
+            'file' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+        ]);
+
+        $fhk = new Fhk();
+        $fhk->judul = $request->judul;
+        $fhk->tema = $request->tema;
+        $fhk->bacaan_alkitab = $request->bacaan_alkitab;
+        $fhk->tanggal_khotbah = $request->tanggal_khotbah;
+        if ($request->hasFile('file')) {
+            $file = $request->file('file');
+            $fileName = time() . '_' . $file->getClientOriginalName();
+            $destinationPath = public_path('fhk');
+
+            try {
+                $file->move($destinationPath, $fileName);
+                $fhk->file = 'fhk/' . $fileName;
+            } catch (\Exception $e) {
+                return back()->with('error', 'Gagal menyimpan file: ' . $e->getMessage());
+            }
+        }
+
+        $fhk->save();
+
         return redirect()->route('fhk.index')->with('success', 'FHK created successfully.');
     }
 

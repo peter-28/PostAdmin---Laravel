@@ -8,7 +8,8 @@
     </ol>
 @endsection
 @section('content')
-    <form action="{{route('fhk.store')}}" method="post">
+    @include('admin.any.index')
+    <form action="{{ route('fhk.store') }}" method="post" enctype="multipart/form-data">
         @csrf
         @method('POST')
         <div class="row">
@@ -21,22 +22,21 @@
                         <div class="form-group">
                             <label for="">Judul</label>
                             <input type="text" class="form-control" id="judul" name="judul"
-                                   placeholder="Masukkan judul" required>
+                                placeholder="Masukkan judul" required>
                         </div>
                         <div class="form-group">
                             <label for="">Tema</label>
                             <input type="text" class="form-control" id="tema" name="tema"
-                                   placeholder="Masukkan Tema" required>
+                                placeholder="Masukkan Tema" required>
                         </div>
                         <div class="form-group">
                             <label for="">Bacaan Alkitab</label>
                             <input type="text" class="form-control" id="bacaan_alkitab" name="bacaan_alkitab"
-                                   placeholder="Yes : Bacaan Alkitab" required>
+                                placeholder="Yes : Bacaan Alkitab" required>
                         </div>
                         <div class="form-group">
                             <label for="">Tanggal Khotbah</label>
-                            <input type="date" class="form-control" id="tanggal_khotbah" name="tanggal_khotbah"
-                                   required>
+                            <input type="date" class="form-control" id="tanggal_khotbah" name="tanggal_khotbah" required>
                         </div>
                         <div class="form-group">
                             <label for="">File</label>
@@ -44,8 +44,8 @@
                         </div>
                     </div>
                     <div class="card-footer">
-                        <a href="{{route('fhk.index')}}" class="btn btn-secondary"> <i
-                                class="bi bi-arrow-left"></i> Kembali</a>
+                        <a href="{{ route('fhk.index') }}" class="btn btn-secondary"> <i class="bi bi-arrow-left"></i>
+                            Kembali</a>
                         <button type="submit" class="btn btn-success">Save Change</button>
                     </div>
                 </div>
